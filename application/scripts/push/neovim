@@ -1,0 +1,10 @@
+# To push the neovim configs
+cd ~
+nvim_config=".config/nvim"
+if [ ! -d ${nvim_config} ]; then
+	echo "Creating folder" $nvim_config
+	mkdir ${nvim_config}
+fi
+
+cp repos/linux-onthego/configs/neovim/init.vim ${nvim_config}/init.vim
+
