@@ -6,5 +6,5 @@ if [ ! -d ${nvim_config} ]; then
 	mkdir ${nvim_config}
 fi
 
-cp repos/linux-onthego/configs/neovim/init.vim ${nvim_config}/init.vim
+cp repos/linux-onthego/configs/neovim/init.lua ${nvim_config}/init.lua
 

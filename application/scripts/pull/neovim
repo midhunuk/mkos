@@ -1,2 +1,2 @@
 cd ~
-cp .config/nvim/init.vim repos/linux-onthego/configs/neovim/init.vim
+cp .config/nvim/init.lua  repos/linux-onthego/configs/neovim/init.lua
