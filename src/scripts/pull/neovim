@@ -1,2 +1,2 @@
 cd ~
-cp .config/nvim/init.lua  repos/linux-onthego/configs/neovim/init.lua
+cp .config/nvim/init.lua  repos/mkos/configs/neovim/init.lua

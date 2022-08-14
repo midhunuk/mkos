@@ -1,6 +1,10 @@
 local g = vim.g
 local o = vim.o
 
+-- Functional wrapper for mapping custom keybindings
+local function map(mode, key, command)
+    vim.api.nvim_set_keymap(mode, key, command, { silent = true })
+end
 
 -- Better editor UI
 o.number = true
@@ -46,3 +50,13 @@ o.foldlevelstart = 99
 o.foldnestmax = 3
 o.foldminlines = 1
 
+-- Disable arrow keys for learning 
+map("n", "<Up>", "<Nop>")
+map("n", "<Left>", "<Nop>")
+map("n", "<Right>", "<Nop>")
+map("n", "<Down>", "<Nop>")
+
+map("i", "<Up>", "<Nop>")
+map("i", "<Left>", "<Nop>")
+map("i", "<Right>", "<Nop>")
+map("i", "<Down>", "<Nop>")
