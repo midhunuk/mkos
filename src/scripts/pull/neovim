@@ -1,2 +1,0 @@
-cd ~
-cp .config/nvim/init.lua  repos/mkos/configs/neovim/init.lua
