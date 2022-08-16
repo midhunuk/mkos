@@ -11,6 +11,8 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
+opt.backup = false                    -- Don't create backup file 
+
 
 -----------------------------------------------------------
 -- Neovim UI
@@ -25,6 +27,8 @@ opt.smartcase = true        -- Ignore lowercase for the whole pattern
 opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus=3            -- Set global statusline
+--opt.cmdheight = 2           -- space in command line for message
+--opt.cursorline = true       -- highlight the curret line
 
 -----------------------------------------------------------
 -- Tabs, indent
