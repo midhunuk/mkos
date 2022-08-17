@@ -51,6 +51,9 @@ return packer.startup(function(use)
   
   -- plugins
 
+  -- Color schemes
+  use 'navarasu/onedark.nvim'
+
   -- Autopair
   use {
     'windwp/nvim-autopairs',
