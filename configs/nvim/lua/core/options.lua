@@ -47,3 +47,9 @@ opt.history = 100           -- Remember N lines in history
 opt.lazyredraw = true       -- Faster scrolling
 opt.synmaxcol = 240         -- Max column for syntax highlight
 opt.updatetime = 700        -- ms to wait for trigger an event
+
+-----------------------------------------------------------
+-- spell check 
+-----------------------------------------------------------
+opt.spell = true            -- Enable spell check
+opt.spelllang = { 'en_us' } -- Set spell check language to english
