@@ -61,8 +61,6 @@ return packer.startup(function(use)
     end
   }
 
-  use 'VonHeikemen/lsp-zero.nvim'
-
   use 'hrsh7th/nvim-cmp'           -- The completion plugin the main plugin
   use 'hrsh7th/cmp-buffer'         -- source for buffer completions
   use 'hrsh7th/cmp-path'           -- source for file path completions
@@ -73,11 +71,16 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lua'
   use 'rafamadriz/friendly-snippets'
 
-  use 'L3MON4D3/LuaSnip' --snippet engine - It is required by nvim-cmp
+  use 'L3MON4D3/LuaSnip' --snippet engine - It is required by nvim-cmp and lsp
 
+  use 'VonHeikemen/lsp-zero.nvim' -- enable LSP
   use 'neovim/nvim-lspconfig' -- enable LSP
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+
+  use 'nvim-treesitter/nvim-treesitter' -- for syntax highlighting 
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
