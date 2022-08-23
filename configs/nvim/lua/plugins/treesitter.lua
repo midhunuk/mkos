@@ -4,6 +4,11 @@ if not status_ok then
 end
 
 
+local status_ok, spellsitter = pcall(require, "spellsitter")
+if not status_ok then
+  return
+end
+
 treesitter_configs.setup {
   ensure_installed = "all",
   sync_install = false, 
@@ -11,8 +16,10 @@ treesitter_configs.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = false, -- disabled else spellsitter does not work
   },
-  indent = { enable = true, disable = { "yaml" } },
+  indent = { enable = true, disable = {  } },
 }
+
+spellsitter.setup()
 

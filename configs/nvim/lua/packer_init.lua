@@ -79,7 +79,7 @@ return packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
 
   use 'nvim-treesitter/nvim-treesitter' -- for syntax highlighting 
-
+  use 'lewis6991/spellsitter.nvim'     -- for spell check along with treesitter
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
