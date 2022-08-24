@@ -53,3 +53,13 @@ opt.updatetime = 700        -- ms to wait for trigger an event
 -----------------------------------------------------------
 opt.spell = true            -- Enable spell check
 opt.spelllang = { 'en_us' } -- Set spell check language to english
+
+-----------------------------------------------------------
+-- terminal settings 
+-----------------------------------------------------------
+vim.cmd [[
+augroup custom_term
+	autocmd!
+	autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
+augroup END
+]]

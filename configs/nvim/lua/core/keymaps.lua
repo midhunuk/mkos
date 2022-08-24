@@ -53,3 +53,11 @@ map('v', 'p','"_dp')
 
 -- map for file explorer
 map('n', '<Leader>e', ':NvimTreeOpen<CR>')
+
+-- map for terminal
+map('n', '<Leader>t', ':terminal<CR>')
+map('t', 'ff', '<C-\\><C-n>')
+
+-- map for close and save using leader key
+map('n', '<Leader>w', ':w<CR>')
+map('n', '<Leader>q', ':q!<CR>')
