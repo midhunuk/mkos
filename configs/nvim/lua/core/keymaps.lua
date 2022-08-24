@@ -48,11 +48,23 @@ map('x', 'ff', '<Esc>')
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
+-- Better window navigation
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+
+-- Resize with arrows
+map('n', '<C-Up>', ':resize -2<CR>')
+map('n', '<C-Down>', ':resize +2<CR>')
+map('n', '<C-Left>', ':vertical resize -2<CR>')
+map('n', '<C-Right>', ':vertical resize +2<CR>')
+
 -- hold on to last copied register
 map('v', 'p','"_dp')
 
 -- map for file explorer
-map('n', '<Leader>e', ':NvimTreeOpen<CR>')
+map('n', '<Leader>e', ':NvimTreeToggle<CR>')
 
 -- map for close and save using leader key
 map('n', '<Leader>w', ':w<CR>')
