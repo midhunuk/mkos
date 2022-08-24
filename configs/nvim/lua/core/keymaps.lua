@@ -51,9 +51,5 @@ map('v', '>', '>gv')
 -- hold on to last copied register
 map('v', 'p','"_dp')
 
--- Better window navigation
--- Not working to be tested
---map('n', '<C-h>', '<C-w>h')
---map('n', '<C-j>', '<C-w>j')
---map('n', '<C-k>', '<C-w>k')
---map('n', '<C-l>', '<C-w>l')
+-- map for file explorer
+map('n', '<Leader>e', ':NvimTreeOpen<CR>')
