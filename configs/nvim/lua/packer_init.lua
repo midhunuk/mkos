@@ -82,6 +82,7 @@ return packer.startup(function(use)
   use 'lewis6991/spellsitter.nvim'     -- for spell check along with treesitter
 
   use 'kyazdani42/nvim-tree.lua'  -- file explorer
+  use "akinsho/toggleterm.nvim"   -- terminal plugin
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
