@@ -1,3 +1,5 @@
+use fetch_dump;
+
 #[test]
 
 fn it_works() {
