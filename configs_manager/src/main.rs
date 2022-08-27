@@ -9,5 +9,12 @@ fn main() {
     let repo_root_directory = String::new();
     let files:Vec<ConfigFiles> = Vec::new();
 
-    fetch_dump::fetch_dump::fetch_config_files(&files, &repo_root_directory);
+    let result = fetch_dump::fetch_dump::fetch_config_files(&files, &repo_root_directory);
+
+    if result.is_err(){
+        let error_messages = result.err().expect("Error messages not found");
+        for error_message in &error_messages {
+             println!("{}", error_message);
+        }
+    }
 }
