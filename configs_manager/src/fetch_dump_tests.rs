@@ -1,11 +1,16 @@
 #[cfg(test)]
 
 mod tests {
+
     use crate::{fetch_dump::fetch_dump, config_files_info::config_files_info::ConfigFiles};
     
     #[ctor::ctor]
     fn init() {
-        let test_directory = get_test_folder_path();
+        let mut test_directory = get_test_folder_path();
+        if test_directory.is_dir(){
+            std::fs::remove_dir_all(test_directory).expect("test folder deletion in init failed");
+            test_directory = get_test_folder_path();
+        }
         std::fs::create_dir(test_directory).expect("test folder creation failed");
         setup_test_folder_files();
     }
@@ -30,15 +35,32 @@ mod tests {
         //-> testfolder
         //  -> fetchfolder
         //      -> test.lua
+        //      -> app
+        //          ->test
+        //              ->test.lua
+        //          ->test.lua
+        //          ->test.rs
         //  -> repofolder
         let test_directory = get_test_folder_path();
         let fetch_folder_directory = test_directory.join("fetchfolder");
         let repo_folder_directory = test_directory.join("repofolder");
         std::fs::create_dir(fetch_folder_directory).expect("fetch folder creation failed");
         std::fs::create_dir(repo_folder_directory).expect("repo folder creation failed");
-        let file_a = test_directory.join("fetchfolder/test.lua");
-        std::fs::File::create(file_a).expect("fileA creation failed");
+        create_file("fetchfolder","test.lua");
+        create_file("fetchfolder/app","test.lua");
+        create_file("fetchfolder/app/test","test.lua");
+        create_file("fetchfolder/app","test.rs");
     }
+
+    fn create_file(directory_path: &str, filename: &str){
+        let test_directory = get_test_folder_path();
+        let file_directory = test_directory.join(directory_path);
+        if !file_directory.is_dir() {
+            std::fs::create_dir(file_directory).expect("directory creation failed during file creation")
+        }
+        let filepath = test_directory.join(directory_path).join(filename);
+        std::fs::File::create(filepath).expect("file creation failed");
+    } 
 
     fn get_test_configs_file(fetch_file: &str, repo_file: &str, filename: &str) -> ConfigFiles {
         let config_file = ConfigFiles{
@@ -57,12 +79,26 @@ mod tests {
         assert!(assert_result);
     }
 
+    fn assert_result_ok(result: &Result<(),Vec<String>>) {
+        let assert_result = match result {
+            Ok(()) => true,
+            Err(_) => false
+        };
+        assert!(assert_result);
+    }
+
     fn assert_error_message(excepted_messages: &Vec<String>, actual_message: &Vec<String>){
         assert!(excepted_messages.len() == actual_message.len());
         println!("{}", actual_message.len());
         for n in 0..actual_message.len(){
             assert_eq!(excepted_messages[n], actual_message[n])
         }
+    }
+
+    fn assert_file_exists(filepath: &str) {
+        let test_directory = get_test_folder_path();
+        let file_path = test_directory.join(filepath);
+        file_path.try_exists().expect("File does not exists"); 
     }
 
     #[test]
@@ -106,5 +142,22 @@ mod tests {
         assert_result_error(&result);
         let actual_message = result.err().unwrap(); 
         assert_error_message(&excepted_messages, &actual_message);
+    }
+
+    #[test]
+    fn fetch_config_files_valid_config_files_path_no_panic() {
+        let test_directory = get_test_folder_path();
+        let repo_folder = test_directory.join("repofolder");
+        let mut files:Vec<ConfigFiles> = Vec::new();
+        files.push(get_test_configs_file("fetchfolder/app", "repofolder/app/", "test.lua"));
+        files.push(get_test_configs_file("fetchfolder/app/test", "repofolder/app/folder", "test.lua"));
+        files.push(get_test_configs_file("fetchfolder/app", "repofolder/app", "test.rs"));
+
+        let result = fetch_dump::fetch_config_files(&files, repo_folder.to_str().unwrap());
+        
+        assert_result_ok(&result);
+        assert_file_exists("repofolder/app/test.lua");
+        assert_file_exists("repofolder/app/folder/test.lua");
+        assert_file_exists("repofolder/app/test.rs");
     }
 }
