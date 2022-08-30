@@ -50,6 +50,11 @@ mod tests {
         create_file("fetchfolder/app","test.lua");
         create_file("fetchfolder/app/test","test.lua");
         create_file("fetchfolder/app","test.rs");
+
+        create_file("repofolder","test.lua");
+        create_file("repofolder/app1","test.lua");
+        create_file("repofolder/app1/folder","test.lua");
+        create_file("repofolder/app1","test.rs");
     }
 
     fn create_file(directory_path: &str, filename: &str){
@@ -159,5 +164,41 @@ mod tests {
         assert_file_exists("repofolder/app/test.lua");
         assert_file_exists("repofolder/app/folder/test.lua");
         assert_file_exists("repofolder/app/test.rs");
+    }
+
+    #[test]
+    fn dump_config_files_invalid_config_files_path() {
+        let test_directory = get_test_folder_path();
+        let repo_folder = test_directory.join("repofolder");
+        let mut files:Vec<ConfigFiles> = Vec::new();
+        files.push(get_test_configs_file("fetchfolder", "repofolder", "test.lua"));
+        files.push(get_test_configs_file("fetchfolder", "repofolder/test", "test.lua"));
+        files.push(get_test_configs_file("fetchfolder", "repofolder", "test.rs"));
+        let mut excepted_messages:Vec<String> = Vec::new();
+        excepted_messages.push(format!("{}/repofolder/test/test.lua not found", get_test_folder_path_string()));
+        excepted_messages.push(format!("{}/repofolder/test.rs not found", get_test_folder_path_string()));
+
+        let result = fetch_dump::dump_config_files(&files, repo_folder.to_str().unwrap());
+        
+        assert_result_error(&result);
+        let actual_message = result.err().unwrap(); 
+        assert_error_message(&excepted_messages, &actual_message);
+    }
+
+    #[test]
+    fn dump_config_files_valid_config_files_path_no_panic() {
+        let test_directory = get_test_folder_path();
+        let repo_folder = test_directory.join("repofolder");
+        let mut files:Vec<ConfigFiles> = Vec::new();
+        files.push(get_test_configs_file("fetchfolder/app1", "repofolder/app1/", "test.lua"));
+        files.push(get_test_configs_file("fetchfolder/app1/test", "repofolder/app1/folder", "test.lua"));
+        files.push(get_test_configs_file("fetchfolder/app1", "repofolder/app1", "test.rs"));
+
+        let result = fetch_dump::dump_config_files(&files, repo_folder.to_str().unwrap());
+        
+        assert_result_ok(&result);
+        assert_file_exists("fetchfolder/app1/test.lua");
+        assert_file_exists("fetchfolder/app1/folder/test.lua");
+        assert_file_exists("fetchfolder/app1/test.rs");
     }
 }

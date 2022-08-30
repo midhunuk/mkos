@@ -5,7 +5,7 @@ pub mod fetch_dump{
 
     pub fn fetch_config_files(config_files: &Vec<ConfigFiles>, repo_root_directory: &str) -> Result<(), Vec<String>> { 
         check_if_repo_directory_exists_else_panic(repo_root_directory);
-        let error_messages = check_config_files_path(config_files);
+        let error_messages = validate_config_files_path(config_files);
         if !error_messages.is_empty() {
             return Err(error_messages);
         }
@@ -23,6 +23,19 @@ pub mod fetch_dump{
 
     pub fn dump_config_files  (config_files: &Vec<ConfigFiles>, repo_root_directory: &str) -> Result<(), Vec<String>> {
         check_if_repo_directory_exists_else_panic(repo_root_directory);
+        let error_messages = validate_repo_files_path(repo_root_directory, config_files);
+        if !error_messages.is_empty() {
+            return Err(error_messages);
+        }
+        for config_file in config_files {
+            create_config_directory_if_not_existing(&config_file.config_file_directory);
+            let config_file_path = create_config_file_path(config_file);
+            let repo_file_path = create_repo_file_path(config_file, repo_root_directory);
+            let copy_result = std::fs::copy(repo_file_path, config_file_path);
+            if copy_result.is_err(){
+                panic!("copying failed");
+            } 
+        }
         Ok(())
     }
 
@@ -33,7 +46,7 @@ pub mod fetch_dump{
         }
     }
 
-    fn check_config_files_path(config_files: &Vec<ConfigFiles>) -> Vec<String>{
+    fn validate_config_files_path(config_files: &Vec<ConfigFiles>) -> Vec<String>{
         let mut error_messages: Vec<String> = Vec::new();
         for config_file in config_files {
             let config_files_path = create_config_file_path(config_file);
@@ -60,6 +73,26 @@ pub mod fetch_dump{
         let repo_directory_path = Path::new(repo_root_directory).join(repo_directory); 
         if !repo_directory_path.is_dir(){
             std::fs::create_dir(repo_directory_path).expect("directory creation")
+        }
+    }
+
+    fn validate_repo_files_path(repo_root_directory: &str, config_files: &Vec<ConfigFiles>) -> Vec<String>{
+        let mut error_messages: Vec<String> = Vec::new();
+        for config_file in config_files {
+            let repo_files_path = create_repo_file_path(config_file, repo_root_directory);
+            let does_file_exists = repo_files_path.exists();
+            if !does_file_exists {
+                let message = format!("{} not found", repo_files_path.to_str().unwrap());
+                error_messages.push(message);
+            }
+        }; 
+        error_messages
+    }
+
+    fn create_config_directory_if_not_existing(config_directory: &str) {
+        let config_directory_path = Path::new(config_directory);
+        if !config_directory_path.is_dir(){
+            std::fs::create_dir(config_directory_path).expect("directory creation")
         }
     }
 }
