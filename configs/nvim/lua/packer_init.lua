@@ -46,47 +46,54 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- Have packer manage itself
-  use 'wbthomason/packer.nvim'
-  -- plugins
+	-- Have packer manage itself
+  	use 'wbthomason/packer.nvim'
+  	-- plugins
 
-  -- Color schemes
-  use 'navarasu/onedark.nvim'
+  	-- Color schemes
+  	use 'navarasu/onedark.nvim'
 
-  -- Autopair
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup{}
-    end
-  }
+  	-- Autopair
+  	use {
+  	  'windwp/nvim-autopairs',
+  	  config = function()
+  	    require('nvim-autopairs').setup{}
+  	  end
+  	}
 
-  use 'hrsh7th/nvim-cmp'           -- The completion plugin the main plugin
-  use 'hrsh7th/cmp-buffer'         -- source for buffer completions
-  use 'hrsh7th/cmp-path'           -- source for file path completions
-  use 'hrsh7th/cmp-cmdline'        -- source for cmdline completions
-  use 'saadparwaiz1/cmp_luasnip'   -- source for snippet completions
-  use 'hrsh7th/cmp-nvim-lsp'       -- source for lsp complections 
-  use 'f3fora/cmp-spell'           -- source for vim spell check 
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'rafamadriz/friendly-snippets'
+	use 'hrsh7th/nvim-cmp'           -- The completion plugin the main plugin
+  	use 'hrsh7th/cmp-buffer'         -- source for buffer completions
+  	use 'hrsh7th/cmp-path'           -- source for file path completions
+  	use 'hrsh7th/cmp-cmdline'        -- source for cmdline completions
+  	use 'saadparwaiz1/cmp_luasnip'   -- source for snippet completions
+  	use 'hrsh7th/cmp-nvim-lsp'       -- source for lsp complections 
+  	use 'f3fora/cmp-spell'           -- source for vim spell check 
+  	use 'hrsh7th/cmp-nvim-lua'
+  	use 'rafamadriz/friendly-snippets'
 
-  use 'L3MON4D3/LuaSnip' --snippet engine - It is required by nvim-cmp and lsp
+	use 'L3MON4D3/LuaSnip' --snippet engine - It is required by nvim-cmp and lsp
 
-  use 'VonHeikemen/lsp-zero.nvim' -- enable LSP
-  use 'neovim/nvim-lspconfig' -- enable LSP
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  	use 'VonHeikemen/lsp-zero.nvim' -- enable LSP
+  	use 'neovim/nvim-lspconfig' -- enable LSP
+  	use 'williamboman/mason.nvim'
+  	use 'williamboman/mason-lspconfig.nvim'
 
-  use 'nvim-treesitter/nvim-treesitter' -- for syntax highlighting 
-  use 'lewis6991/spellsitter.nvim'     -- for spell check along with treesitter
+  	use 'nvim-treesitter/nvim-treesitter' -- for syntax highlighting 
+  	use 'lewis6991/spellsitter.nvim'     -- for spell check along with treesitter
 
-  use 'kyazdani42/nvim-tree.lua'  -- file explorer
-  use "akinsho/toggleterm.nvim"   -- terminal plugin
+  	use 'kyazdani42/nvim-tree.lua'  -- file explorer
+  	use 'akinsho/toggleterm.nvim'   -- terminal plugin
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require('packer').sync()
-  end
+	-- Debugging
+	use 'mfussenegger/nvim-dap'
+	use 'leoluz/nvim-dap-go'
+	use 'rcarriga/nvim-dap-ui'
+	use 'theHamsta/nvim-dap-virtual-text'
+	use 'nvim-telescope/telescope-dap.nvim'
+
+	-- Automatically set up your configuration after cloning packer.nvim
+  	-- Put this at the end after all plugins
+  	if PACKER_BOOTSTRAP then
+  	  require('packer').sync()
+  	end
 end)
