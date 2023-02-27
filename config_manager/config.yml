@@ -1,0 +1,21 @@
+source_location: src
+app_details:
+    - name: app
+      config_location: locai
+      config_files: 
+        - A
+        - B
+        - C
+    - name: app1
+      config_location: locaie
+      config_files: 
+        - Aw
+        - Bw
+        - Cw
+    - name: app2
+      config_location: locairr
+      config_files: 
+        - Ae
+        - Be
+        - Ce
+    
