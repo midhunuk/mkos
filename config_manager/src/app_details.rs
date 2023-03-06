@@ -10,7 +10,7 @@ pub struct AppDetails{
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Config{
-    pub source_location:String,
+    pub repo_root_path:String,
     pub app_details:Vec<AppDetails>
 }
 
