@@ -1,0 +1,7 @@
+repo_root_path: /home/mk/hobby/gitrepo/mkos
+app_details:
+    - name: config manager
+      config_files: 
+          - filename: config.yml
+            config_file_location: /usr/local/bin/config_manager
+            config_file_repo_location: configs/config_manager
