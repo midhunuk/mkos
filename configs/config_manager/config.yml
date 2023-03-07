@@ -5,3 +5,8 @@ app_details:
           - filename: config.yml
             config_file_location: /usr/local/bin/config_manager
             config_file_repo_location: configs/config_manager
+    - name: dnf
+      config_files: 
+          - filename: dnf.conf
+            config_file_location: /etc/dnf
+            config_file_repo_location: configs/dnf
