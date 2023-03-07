@@ -4,7 +4,7 @@ use std::fs;
 use std::path::PathBuf;
 use std::fs::File;
 
-use crate::app_details::{AppDetails};
+use crate::app_details::{AppDetails, ConfigFile};
 pub enum ConfigOperations {
     CopyFromSource = 1,
     CopyToSource
@@ -29,30 +29,48 @@ impl fmt::Display for ConfigOperations {
     }
 }
 
-pub fn perform_config_operation(selected_config_operation : ConfigOperations, app_details: Vec<&AppDetails>, repo_root_path: &String){
+pub fn perform_config_operation(selected_config_operation: ConfigOperations, app_details: Vec<&AppDetails>, repo_root_path: &String){
+    match selected_config_operation {
+        ConfigOperations::CopyFromSource => copy_files_from_repo(app_details, repo_root_path),
+        ConfigOperations::CopyToSource => copy_files_to_repo(app_details, repo_root_path)
+    }
+    
+}
 
+fn copy_files_from_repo(app_details: Vec<&AppDetails>, repo_root_path: &String) {
     for app_detail in app_details{
         for config_file in &app_detail.config_files{
-            let repo_file_path = get_file_path(config_file, repo_root_path);
-            let app_file_path = get_file_path(config_file, &app_detail.config_location);
-            match selected_config_operation {
-                ConfigOperations::CopyFromSource => copy_file(repo_file_path, app_file_path),
-                ConfigOperations::CopyToSource => copy_file(app_file_path, repo_file_path),
-            }
+            let source_file_path = get_repo_file_path(config_file, repo_root_path);
+            let target_file_path = get_config_file_path(config_file);
+            let target_file_directory_path = PathBuf::new().join(&config_file.config_file_location);
+            copy_file(source_file_path, target_file_path, target_file_directory_path)
+            
         }
     }
 }
 
-fn get_file_path(file_path: &String, root_path: &String) -> PathBuf {
-    return Path::new(root_path).join(file_path);
+fn get_repo_file_path(config_file: &ConfigFile, repo_root_path: &String) -> PathBuf{
+    return PathBuf::new().join(repo_root_path).join(&config_file.config_file_repo_location).join(&config_file.filename);
 }
 
-fn copy_file(source_file_path: PathBuf, target_file_path: PathBuf) {
+fn get_config_file_path(config_file: &ConfigFile) -> PathBuf{
+    return PathBuf::new().join(&config_file.config_file_location).join(&config_file.filename);
+}
+
+fn copy_files_to_repo(app_details: Vec<&AppDetails>, repo_root_path: &String) {
+    todo!()
+}
+
+fn copy_file(source_file_path: PathBuf, target_file_path: PathBuf, target_file_directory_path: PathBuf) {
     if !source_file_path.exists(){
         panic!("Source file does not exists");
     }
 
-    if !target_file_path.exists(){
+    if !target_file_path.try_exists().expect("Failed on checking if the target exists"){
+
+        if !target_file_directory_path.try_exists().expect("Failed on checking if the target directory exists"){
+            fs::create_dir_all(target_file_directory_path).expect("Failed on creating target directory")
+        }
         File::create(&target_file_path).expect("failed on creating file");
     }
     fs::copy(source_file_path, target_file_path).expect("Failed on copying files");

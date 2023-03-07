@@ -2,10 +2,16 @@ use serde::{Deserialize, Serialize};
 use serde_yaml::{self};
 
 #[derive(Debug, Serialize, Deserialize)]
+pub struct ConfigFile{
+    pub filename:String,
+    pub config_file_location:String,
+    pub config_file_repo_location:String
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct AppDetails{
     pub name:String,
-    pub config_location:String,
-    pub config_files:Vec<String>
+    pub config_files:Vec<ConfigFile>
 }
 
 #[derive(Debug, Serialize, Deserialize)]
