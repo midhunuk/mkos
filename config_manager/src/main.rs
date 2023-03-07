@@ -6,8 +6,6 @@ use crate::app_details::AppDetails;
 use crate::config_operations::ConfigOperations;
 
 fn main() {
-    println!("debug:start");
-
     //Initialize
     let config: app_details::Config = app_details::read_config();
     let app_count: usize = app_details::count_and_display_options(&config.app_details);
@@ -31,7 +29,6 @@ fn main() {
     let app_details: Vec<&AppDetails> = vec![selected_app];
     config_operations::perform_config_operation(selected_config_operation, app_details, &config.repo_root_path);
 
-    println!("debug:end");
 }
 
 fn get_user_input() -> usize{
