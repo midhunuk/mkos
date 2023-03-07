@@ -1,0 +1,20 @@
+mk@fedora 
+--------- 
+OS: Fedora Linux 37 (Workstation Edition) x86_64 
+Host: HP Pavilion Notebook 15-bc5xxx 
+Kernel: 6.1.14-200.fc37.x86_64 
+Uptime: 6 hours, 36 mins 
+Packages: 1901 (rpm), 4 (flatpak) 
+Shell: bash 5.2.15 
+Resolution: 1920x1080 
+DE: GNOME 43.3 
+WM: Mutter 
+WM Theme: Adwaita 
+Theme: Adwaita [GTK2/3] 
+Icons: Adwaita [GTK2/3] 
+Terminal: vscode 
+CPU: Intel i7-9750H (12) @ 4.500GHz 
+GPU: NVIDIA GeForce GTX 1650 Mobile / Max-Q 
+GPU: Intel CoffeeLake-H GT2 [UHD Graphics 630] 
+Memory: 3424MiB / 7747MiB 
+
