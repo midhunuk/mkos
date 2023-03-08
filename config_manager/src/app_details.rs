@@ -24,7 +24,6 @@ pub struct Config{
 
 pub fn read_config() -> Config{
     let config_file_path = PathBuf::new().join(dirs::config_dir().unwrap()).join("config_manager/config.yml");
-    println!("{}",config_file_path.display());
     let file = std::fs::File::open(config_file_path)
         .expect("Could not open the config file.");
     let config : Config = serde_yaml::from_reader(file)

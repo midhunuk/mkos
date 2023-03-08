@@ -3,7 +3,12 @@ app_details:
     - name: config manager
       config_files: 
           - filename: config.yml
-            config_file_location: /usr/local/bin/config_manager
+            config_file_location: ~/.config/config_manager
+            config_file_repo_location: configs/config_manager
+    - name: alacritty
+      config_files: 
+          - filename: alacritty.yml
+            config_file_location: ~/.config/alacritty
             config_file_repo_location: configs/config_manager
     - name: dnf
       config_files: 

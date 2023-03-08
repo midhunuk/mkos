@@ -2,6 +2,7 @@ use std::fmt;
 use std::fs;
 use std::path::PathBuf;
 use std::fs::File;
+extern crate dirs;
 
 use crate::app_details::{AppDetails, ConfigFile};
 pub enum ConfigOperations {
@@ -64,7 +65,9 @@ fn get_repo_file_path(config_file: &ConfigFile, repo_root_path: &String) -> Path
 }
 
 fn get_config_file_path(config_file: &ConfigFile) -> PathBuf{
-    return PathBuf::new().join(&config_file.config_file_location).join(&config_file.filename);
+    let home_dir = dirs::home_dir().expect("Failed on reading home dir");
+    let home_dir_string = home_dir.to_str().expect("Failed to convert home dir to string");
+    return PathBuf::new().join(&config_file.config_file_location.replace("~",home_dir_string)).join(&config_file.filename);
 }
 
 fn copy_file(source_file_path: PathBuf, target_file_path: PathBuf, target_file_directory_path: PathBuf) {
