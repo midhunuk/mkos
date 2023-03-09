@@ -53,7 +53,7 @@ fn copy_files_to_repo(app_details: Vec<&AppDetails>, repo_root_path: &String) {
         for config_file in &app_detail.config_files{
             let target_file_path = get_repo_file_path(config_file, repo_root_path);
             let source_file_path = get_config_file_path(config_file);
-            let target_file_directory_path = PathBuf::new().join(repo_root_path).join(&config_file.config_file_location);
+            let target_file_directory_path = PathBuf::new().join(repo_root_path).join(&config_file.config_file_repo_location);
             copy_file(source_file_path, target_file_path, target_file_directory_path);
             println!("Copied {} to {}/{}", config_file.filename, repo_root_path, &config_file.config_file_repo_location)          
         }
