@@ -41,7 +41,7 @@ fn copy_files_from_repo(app_details: Vec<&AppDetails>, repo_root_path: &String) 
         for config_file in &app_detail.config_files{
             let source_file_path = get_repo_file_path(config_file, repo_root_path);
             let target_file_path = get_config_file_path(config_file);
-            let target_file_directory_path = PathBuf::new().join(&config_file.config_file_location);
+            let target_file_directory_path = get_config_file_directory_path(config_file);
             copy_file(source_file_path, target_file_path, target_file_directory_path);
             println!("Copied {} to {}", config_file.filename, &config_file.config_file_location)          
         }
@@ -58,7 +58,7 @@ fn copy_files_to_repo(app_details: Vec<&AppDetails>, repo_root_path: &String) {
             println!("Copied {} to {}/{}", config_file.filename, repo_root_path, &config_file.config_file_repo_location)          
         }
     }
-}
+} 
 
 fn get_repo_file_path(config_file: &ConfigFile, repo_root_path: &String) -> PathBuf{
     return PathBuf::new().join(repo_root_path).join(&config_file.config_file_repo_location).join(&config_file.filename);
@@ -68,6 +68,12 @@ fn get_config_file_path(config_file: &ConfigFile) -> PathBuf{
     let home_dir = dirs::home_dir().expect("Failed on reading home dir");
     let home_dir_string = home_dir.to_str().expect("Failed to convert home dir to string");
     return PathBuf::new().join(&config_file.config_file_location.replace("~",home_dir_string)).join(&config_file.filename);
+}
+
+fn get_config_file_directory_path(config_file: &ConfigFile) -> PathBuf{
+    let home_dir = dirs::home_dir().expect("Failed on reading home dir");
+    let home_dir_string = home_dir.to_str().expect("Failed to convert home dir to string");
+    return PathBuf::new().join(&config_file.config_file_location.replace("~",home_dir_string));
 }
 
 fn copy_file(source_file_path: PathBuf, target_file_path: PathBuf, target_file_directory_path: PathBuf) {
