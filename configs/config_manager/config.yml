@@ -5,11 +5,11 @@ app_details:
           - filename: config.yml
             config_file_location: ~/.config/config_manager
             config_file_repo_location: configs/config_manager
-    - name: alacritty
+    - name: kitty
       config_files: 
-          - filename: alacritty.yml
-            config_file_location: ~/.config/alacritty
-            config_file_repo_location: configs/alacritty
+          - filename: kitty.conf
+            config_file_location: ~/.config/kitty
+            config_file_repo_location: configs/kitty
     - name: nvim
       config_files: 
           - filename: init.lua
