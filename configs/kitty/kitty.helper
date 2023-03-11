@@ -1,0 +1,12 @@
+kitty my new terminal 
+
+ctrl + shfit + G -> opens the last out put in the pager
+	vi commands works in the pager 
+
+ls --hyperlink=auto creats link 
+which are click able in the terminal and opens with the default app for that type 
+TODO: crate a alias for ls  and modify default apps 
+
+TODO: use the kitten for speical grep for click to that point
+
+kitty +kitten themes // for themes from their repo 
