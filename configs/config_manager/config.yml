@@ -10,6 +10,11 @@ app_details:
           - filename: kitty.conf
             config_file_location: ~/.config/kitty
             config_file_repo_location: configs/kitty
+    - name: zsh
+      config_files: 
+          - filename: .zshrc
+            config_file_location: ~
+            config_file_repo_location: configs/zsh
     - name: nvim
       config_files: 
           - filename: init.lua

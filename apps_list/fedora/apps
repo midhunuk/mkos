@@ -1893,6 +1893,7 @@ zip.x86_64                                           3.0-33.fc37                
 zlib.x86_64                                          1.2.12-5.fc37                       @anaconda              
 zram-generator.x86_64                                1.1.2-2.fc37                        @anaconda              
 zram-generator-defaults.noarch                       1.1.2-2.fc37                        @anaconda              
+zsh.x86_64                                           5.9-2.fc37                          @fedora                
 zstd.x86_64                                          1.5.4-1.fc37                        @updates               
 zvbi.x86_64                                          0.2.35-19.fc37                      @updates               
 zxing-cpp.x86_64                                     1.2.0-7.fc37                        @anaconda              
