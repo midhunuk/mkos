@@ -1,3 +1,9 @@
 [user]
 	email = midhunukumar5@gmail,com
 	name = Midhun Kumar
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff
+[difftool]
+	prompt = false

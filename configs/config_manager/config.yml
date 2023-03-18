@@ -15,6 +15,11 @@ app_details:
           - filename: .zshrc
             config_file_location: ~
             config_file_repo_location: configs/zsh
+    - name: git
+      config_files: 
+          - filename: .gitconfig
+            config_file_location: ~
+            config_file_repo_location: configs/git
     - name: nvim
       config_files: 
           - filename: init.lua
