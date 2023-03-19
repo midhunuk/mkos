@@ -1,59 +1,58 @@
-repo_root_path: /home/mk/hobby/gitrepo/mkos
-app_details:
+repo_root_path: /home/mk/hobby/gitrepo/mkos app_details:
     - name: config manager
       config_files: 
           - filename: config.yml
             config_file_location: ~/.config/config_manager
-            config_file_repo_location: configs/config_manager
+            config_file_repo_location: apps/config_manager
     - name: kitty
       config_files: 
           - filename: kitty.conf
             config_file_location: ~/.config/kitty
-            config_file_repo_location: configs/kitty
+            config_file_repo_location: apps/kitty
     - name: zsh
       config_files: 
           - filename: .zshrc
             config_file_location: ~
-            config_file_repo_location: configs/zsh
+            config_file_repo_location: apps/zsh
     - name: git
       config_files: 
           - filename: .gitconfig
             config_file_location: ~
-            config_file_repo_location: configs/git
+            config_file_repo_location: apps/git
     - name: nvim
       config_files: 
           - filename: init.lua
             config_file_location: ~/.config/nvim
-            config_file_repo_location: configs/nvim
+            config_file_repo_location: apps/nvim
           - filename: packer_init.lua
             config_file_location: ~/.config/nvim/lua
-            config_file_repo_location: configs/nvim/lua
+            config_file_repo_location: apps/nvim/lua
           - filename: colors.lua
             config_file_location: ~/.config/nvim/lua/core
-            config_file_repo_location: configs/nvim/lua/core
+            config_file_repo_location: apps/nvim/lua/core
           - filename: keymaps.lua
             config_file_location: ~/.config/nvim/lua/core
-            config_file_repo_location: configs/nvim/lua/core
+            config_file_repo_location: apps/nvim/lua/core
           - filename: options.lua
             config_file_location: ~/.config/nvim/lua/core
-            config_file_repo_location: configs/nvim/lua/core
+            config_file_repo_location: apps/nvim/lua/core
           - filename: lsp.lua
             config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: configs/nvim/lua/plugins
+            config_file_repo_location: apps/nvim/lua/plugins
           - filename: nvim-cmp.lua
             config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: configs/nvim/lua/plugins
+            config_file_repo_location: apps/nvim/lua/plugins
           - filename: nvim-tree.lua
             config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: configs/nvim/lua/plugins
+            config_file_repo_location: apps/nvim/lua/plugins
           - filename: toggleterm.lua
             config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: configs/nvim/lua/plugins
+            config_file_repo_location: apps/nvim/lua/plugins
           - filename: treesitter.lua
             config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: configs/nvim/lua/plugins
+            config_file_repo_location: apps/nvim/lua/plugins
     - name: dnf
       config_files: 
           - filename: dnf.conf
             config_file_location: /etc/dnf
-            config_file_repo_location: configs/dnf
+            config_file_repo_location: apps/dnf
