@@ -7,3 +7,6 @@
 	tool = nvimdiff
 [difftool]
 	prompt = false
+[alias]
+	add-commit = !git add -A && git commit
+	gs = !git status
