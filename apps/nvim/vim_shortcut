@@ -36,3 +36,7 @@ alignment
 custom shortcut
 ===============
 <leader> p paste without repalcing the buffer. (noremap(<leader>p, "\"_dp"))
+
+Config file
+===========
+:so for sourceind the file in the buffer 
