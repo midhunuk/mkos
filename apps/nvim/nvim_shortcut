@@ -3,3 +3,16 @@ File navigation
 
 % -> creates new file
 d -> created new directory
+
+
+===========
+Plugins
+===========
+
+Telescope
+=========
+normal <leader>pf -> project find
+normal ctrl + p -> find in git repo
+normal <leader>ps -> project search
+
+normal <leader>vh -> find help files
