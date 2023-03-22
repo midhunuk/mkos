@@ -40,9 +40,9 @@ map('i', '<left>', '<nop>')
 map('i', '<right>', '<nop>')
 
 -- Map Esc to ff  in insert, visual and visual block mode
-map('i', 'jk', '<Esc>')
-map('v', 'jk', '<Esc>')
-map('x', 'jk', '<Esc>')
+map('i', 'fg', '<Esc>')
+map('v', 'fg', '<Esc>')
+map('x', 'fg', '<Esc>')
 
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
