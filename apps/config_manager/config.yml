@@ -1,4 +1,5 @@
-repo_root_path: /home/mk/hobby/gitrepo/mkos app_details:
+repo_root_path: /home/mk/git_repo/mkos 
+app_details:
     - name: config manager
       config_files: 
           - filename: config.yml
@@ -23,34 +24,22 @@ repo_root_path: /home/mk/hobby/gitrepo/mkos app_details:
       config_files: 
           - filename: init.lua
             config_file_location: ~/.config/nvim
-            config_file_repo_location: apps/nvim
+            config_file_repo_location: apps/nvim/configs
           - filename: packer_init.lua
             config_file_location: ~/.config/nvim/lua
-            config_file_repo_location: apps/nvim/lua
+            config_file_repo_location: apps/nvim/configs/lua
           - filename: colors.lua
             config_file_location: ~/.config/nvim/lua/core
-            config_file_repo_location: apps/nvim/lua/core
+            config_file_repo_location: apps/nvim/configs/lua/core
           - filename: keymaps.lua
             config_file_location: ~/.config/nvim/lua/core
-            config_file_repo_location: apps/nvim/lua/core
+            config_file_repo_location: apps/nvim/configs/lua/core
           - filename: options.lua
             config_file_location: ~/.config/nvim/lua/core
-            config_file_repo_location: apps/nvim/lua/core
-          - filename: lsp.lua
-            config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: apps/nvim/lua/plugins
-          - filename: nvim-cmp.lua
-            config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: apps/nvim/lua/plugins
-          - filename: nvim-tree.lua
-            config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: apps/nvim/lua/plugins
-          - filename: toggleterm.lua
-            config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: apps/nvim/lua/plugins
-          - filename: treesitter.lua
-            config_file_location: ~/.config/nvim/lua/plugins
-            config_file_repo_location: apps/nvim/lua/plugins
+            config_file_repo_location: apps/nvim/configs/lua/core
+          - filename: telescope.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
     - name: dnf
       config_files: 
           - filename: dnf.conf

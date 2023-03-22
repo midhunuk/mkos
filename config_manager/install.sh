@@ -8,4 +8,4 @@ sudo cp target/release/config_manager /usr/local/bin/config_manager
 
 rm -rf ~/.config/config_manager/
 [ -d ~/.config/config_manager/ ] || mkdir ~/.config/config_manager/
-cp ../configs/config_manager/config.yml ~/.config/config_manager/config.yml
+cp ../apps/config_manager/config.yml ~/.config/config_manager/config.yml
