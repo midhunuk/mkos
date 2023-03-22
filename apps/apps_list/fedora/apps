@@ -1522,6 +1522,7 @@ python3-systemd.x86_64                               235-1.fc37                 
 python3-tempita.noarch                               0.5.2-7.fc37                        @anaconda              
 python3-unbound.x86_64                               1.17.1-1.fc37                       @updates               
 python3-urllib3.noarch                               1.26.12-1.fc37                      @anaconda              
+qcustomplot-qt5.x86_64                               2.1.1-4.fc37                        @updates               
 qemu-audio-alsa.x86_64                               2:7.0.0-14.fc37                     @updates               
 qemu-audio-dbus.x86_64                               2:7.0.0-14.fc37                     @updates               
 qemu-audio-jack.x86_64                               2:7.0.0-14.fc37                     @updates               
@@ -1586,8 +1587,10 @@ qemu-user-static-xtensa.x86_64                       2:7.0.0-14.fc37            
 qemu-virtiofsd.x86_64                                2:7.0.0-14.fc37                     @updates               
 qgnomeplatform-qt5.x86_64                            0.9.0-8.fc37                        @updates               
 qgnomeplatform-qt6.x86_64                            0.9.0-8.fc37                        @updates               
+qhexedit2-qt5-libs.x86_64                            0.8.9-8.fc37                        @fedora                
 qpdf-libs.x86_64                                     10.6.3-4.fc37                       @anaconda              
 qrencode-libs.x86_64                                 4.1.1-3.fc37                        @anaconda              
+qscintilla-qt5.x86_64                                2.13.0-4.fc37                       @fedora                
 qt-settings.noarch                                   37.1-1.fc37                         @updates               
 qt5-qtbase.x86_64                                    5.15.8-6.fc37                       @updates               
 qt5-qtbase-common.noarch                             5.15.8-6.fc37                       @updates               
@@ -1679,7 +1682,10 @@ spice-server.x86_64                                  0.15.1-1.fc37              
 spice-vdagent.x86_64                                 0.22.1-2.fc37                       @anaconda              
 spice-webdavd.x86_64                                 3.0-3.fc37                          @anaconda              
 spirv-tools-libs.x86_64                              2022.2-3.fc37                       @fedora                
+sqlcipher.x86_64                                     4.4.3-5.fc37                        @fedora                
+sqlite.x86_64                                        3.40.0-1.fc37                       @updates               
 sqlite-libs.x86_64                                   3.40.0-1.fc37                       @updates               
+sqlitebrowser.x86_64                                 3.13.0-0.4.gita302128.fc37          @fedora                
 squashfs-tools.x86_64                                4.5.1-2.fc37                        @anaconda              
 sratom.x86_64                                        0.6.10-2.fc37                       @anaconda              
 srt-libs.x86_64                                      1.5.1-1.fc37                        @updates               
