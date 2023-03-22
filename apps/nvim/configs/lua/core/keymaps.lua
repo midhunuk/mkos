@@ -40,9 +40,9 @@ map('i', '<left>', '<nop>')
 map('i', '<right>', '<nop>')
 
 -- Map Esc to ff  in insert, visual and visual block mode
-map('i', 'ff', '<Esc>')
-map('v', 'ff', '<Esc>')
-map('x', 'ff', '<Esc>')
+map('i', 'jk', '<Esc>')
+map('v', 'jk', '<Esc>')
+map('x', 'jk', '<Esc>')
 
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -58,6 +58,7 @@ map('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- hold on to last copied register
 map('v', 'p','"_dp')
+map("x", "<leader>p", [["_dP]])
 
 -- map for file explorer
 map('n', '<Leader>e', ':Ex<CR>')
@@ -76,6 +77,29 @@ map('n', '<Leader>6', '6gt<CR>')
 map('n', '<Leader>7', '7gt<CR>')
 map('n', '<Leader>8', '8gt<CR>')
 map('n', '<Leader>9', '9gt<CR>')
-
 map('n', '<Leader>l', 'gt<CR>')
 map('n', '<Leader>h', 'gT<CR>')
+
+-- joining line using J will put the cursor where it was rather than moving to the end of the line
+map("n", "J", "mzJ`z")
+
+-- half page jumping keeps the cursor in the center of the screen
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
+-- mapping to move the selected lines up and down
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- keeps the search lines in the middle 
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+-- copies to the clipboard 
+map("n", "<leader>y", [["+y]])
+map("v", "<leader>y", [["+y]])
+map("n", "<leader>Y", [["+Y]])
+
+-- deletes to the void register\
+map("n", "<leader>d", [["_d]])
+map("v", "<leader>d", [["_d]])
