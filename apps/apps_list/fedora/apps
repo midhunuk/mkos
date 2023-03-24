@@ -356,6 +356,7 @@ gawk.x86_64                                          5.1.1-4.fc37               
 gawk-all-langpacks.x86_64                            5.1.1-4.fc37                        @anaconda              
 gc.x86_64                                            8.0.6-4.fc37                        @anaconda              
 gcc.x86_64                                           12.2.1-4.fc37                       @updates               
+gcc-c++.x86_64                                       12.2.1-4.fc37                       @updates               
 gcc-gdb-plugin.x86_64                                12.2.1-4.fc37                       @updates               
 gcr.x86_64                                           3.92.0-1.fc37                       @anaconda              
 gcr-libs.x86_64                                      3.92.0-1.fc37                       @anaconda              
@@ -1040,6 +1041,7 @@ libsss_nss_idmap.x86_64                              2.8.2-1.fc37               
 libsss_sudo.x86_64                                   2.8.2-1.fc37                        @updates               
 libstaroffice.x86_64                                 0.0.7-6.fc37                        @anaconda              
 libstdc++.x86_64                                     12.2.1-4.fc37                       @updates               
+libstdc++-devel.x86_64                               12.2.1-4.fc37                       @updates               
 libstemmer.x86_64                                    0-19.585svn.fc37                    @anaconda              
 libtalloc.x86_64                                     2.3.4-3.fc37                        @anaconda              
 libtasn1.x86_64                                      4.19.0-1.fc37                       @updates               
