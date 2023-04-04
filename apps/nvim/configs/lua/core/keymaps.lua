@@ -61,24 +61,11 @@ map('v', 'p','"_dp')
 map("x", "<leader>p", [["_dP]])
 
 -- map for file explorer
-map('n', '<Leader>e', ':Ex<CR>')
+map('n', '<Leader>e', ':Lexplore<CR>')
 
 -- map for close and save using leader key
 map('n', '<Leader>w', ':w<CR>')
 map('n', '<Leader>q', ':q!<CR>')
-
---map for tabs selection
-map('n', '<Leader>1', '1gt<CR>')
-map('n', '<Leader>2', '2gt<CR>')
-map('n', '<Leader>3', '3gt<CR>')
-map('n', '<Leader>4', '4gt<CR>')
-map('n', '<Leader>5', '5gt<CR>')
-map('n', '<Leader>6', '6gt<CR>')
-map('n', '<Leader>7', '7gt<CR>')
-map('n', '<Leader>8', '8gt<CR>')
-map('n', '<Leader>9', '9gt<CR>')
-map('n', '<Leader>l', 'gt<CR>')
-map('n', '<Leader>h', 'gT<CR>')
 
 -- joining line using J will put the cursor where it was rather than moving to the end of the line
 map("n", "J", "mzJ`z")
@@ -103,3 +90,20 @@ map("n", "<leader>Y", [["+Y]])
 -- deletes to the void register\
 map("n", "<leader>d", [["_d]])
 map("v", "<leader>d", [["_d]])
+
+-- Tab operation 
+map('n', "<c-t>", ":tabnew<CR>")
+map('n', '<Leader>tq', ':tabclose<CR>')
+
+--map for tabs selection
+map('n', '<leader>1', '1gt<CR>')
+map('n', '<Leader>2', '2gt<CR>')
+map('n', '<Leader>3', '3gt<CR>')
+map('n', '<Leader>4', '4gt<CR>')
+map('n', '<Leader>5', '5gt<CR>')
+map('n', '<Leader>6', '6gt<CR>')
+map('n', '<Leader>7', '7gt<CR>')
+map('n', '<Leader>8', '8gt<CR>')
+map('n', '<Leader>9', '9gt<CR>')
+map('n', '<Leader>l', 'gt<CR>')
+map('n', '<Leader>h', 'gT<CR>')
