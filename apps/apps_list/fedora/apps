@@ -1249,6 +1249,11 @@ nfs-utils.x86_64                                     1:2.6.2-2.rc6.fc37         
 nftables.x86_64                                      1:1.0.4-3.fc37                      @anaconda              
 nm-connection-editor.x86_64                          1.28.0-2.fc37                       @anaconda              
 nmap-ncat.x86_64                                     3:7.93-1.fc37                       @anaconda              
+nodejs.x86_64                                        1:18.15.0-1.fc37                    @updates               
+nodejs-docs.noarch                                   1:18.15.0-1.fc37                    @updates               
+nodejs-full-i18n.x86_64                              1:18.15.0-1.fc37                    @updates               
+nodejs-libs.x86_64                                   1:18.15.0-1.fc37                    @updates               
+nodejs-npm.x86_64                                    1:9.5.0-1.18.15.0.1.fc37            @updates               
 npth.x86_64                                          1.6-9.fc37                          @anaconda              
 nspr.x86_64                                          4.35.0-5.fc37                       @updates               
 nss.x86_64                                           3.89.0-1.fc37                       @updates               
