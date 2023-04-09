@@ -9,4 +9,9 @@
 	prompt = false
 [alias]
 	add-commit = !git add -A && git commit
-	gs = !git status
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	d = diff
+	a = add
