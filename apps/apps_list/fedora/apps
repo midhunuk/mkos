@@ -1088,7 +1088,7 @@ libtommath.x86_64                                    1.2.0-8.fc37               
 libtool-ltdl.x86_64                                  2.4.7-2.fc37                        @anaconda              
 libtpms.x86_64                                       0.9.6-1.fc37                        @updates               
 libtracker-sparql.x86_64                             3.4.2-1.fc37                        @updates               
-libtree-sitter.x86_64                                0.20.7-1.fc37                       @fedora                
+libtree-sitter.x86_64                                0.20.8-2.fc37                       @updates               
 libudfread.x86_64                                    1.1.2-4.fc37                        @anaconda              
 libudisks2.x86_64                                    2.9.4-5.fc37                        @anaconda              
 libunistring.x86_64                                  1.0-2.fc37                          @anaconda              
@@ -1270,7 +1270,7 @@ ncurses-libs.x86_64                                  6.3-4.20220501.fc37        
 ndctl.x86_64                                         76.1-1.fc37                         @updates               
 ndctl-libs.x86_64                                    76.1-1.fc37                         @updates               
 neofetch.noarch                                      7.1.0-8.fc37                        @fedora                
-neovim.x86_64                                        0.8.3-4.fc37                        @updates               
+neovim.x86_64                                        0.9.0-1.fc37                        @updates               
 net-snmp-libs.x86_64                                 1:5.9.3-1.fc37                      @anaconda              
 net-tools.x86_64                                     2.0-0.64.20160912git.fc37           @updates               
 netavark.x86_64                                      1.5.0-4.fc37                        @updates               
@@ -1425,13 +1425,13 @@ pigz.x86_64                                          2.7-2.fc37                 
 pinentry.x86_64                                      1.2.1-1.fc37                        @anaconda              
 pinentry-gnome3.x86_64                               1.2.1-1.fc37                        @anaconda              
 pinfo.x86_64                                         0.6.10-30.fc37                      @anaconda              
-pipewire.x86_64                                      0.3.68-2.fc37                       @updates               
-pipewire-alsa.x86_64                                 0.3.68-2.fc37                       @updates               
-pipewire-gstreamer.x86_64                            0.3.68-2.fc37                       @updates               
-pipewire-jack-audio-connection-kit.x86_64            0.3.68-2.fc37                       @updates               
-pipewire-libs.x86_64                                 0.3.68-2.fc37                       @updates               
-pipewire-pulseaudio.x86_64                           0.3.68-2.fc37                       @updates               
-pipewire-utils.x86_64                                0.3.68-2.fc37                       @updates               
+pipewire.x86_64                                      0.3.69-1.fc37                       @updates               
+pipewire-alsa.x86_64                                 0.3.69-1.fc37                       @updates               
+pipewire-gstreamer.x86_64                            0.3.69-1.fc37                       @updates               
+pipewire-jack-audio-connection-kit.x86_64            0.3.69-1.fc37                       @updates               
+pipewire-libs.x86_64                                 0.3.69-1.fc37                       @updates               
+pipewire-pulseaudio.x86_64                           0.3.69-1.fc37                       @updates               
+pipewire-utils.x86_64                                0.3.69-1.fc37                       @updates               
 pixman.x86_64                                        0.40.0-6.fc37                       @anaconda              
 pkcs11-helper.x86_64                                 1.29.0-2.fc37                       @anaconda              
 pkgconf.x86_64                                       1.8.0-3.fc37                        @anaconda              
@@ -1658,7 +1658,7 @@ qgnomeplatform-qt6.x86_64                            0.9.0-11.fc37              
 qhexedit2-qt5-libs.x86_64                            0.8.9-8.fc37                        @fedora                
 qpdf-libs.x86_64                                     10.6.3-5.fc37                       @updates               
 qrencode-libs.x86_64                                 4.1.1-3.fc37                        @anaconda              
-qscintilla-qt5.x86_64                                2.13.0-4.fc37                       @fedora                
+qscintilla-qt5.x86_64                                2.13.4-1.fc37                       @updates               
 qt-settings.noarch                                   37.1-1.fc37                         @updates               
 qt5-qtbase.x86_64                                    5.15.8-6.fc37                       @updates               
 qt5-qtbase-common.noarch                             5.15.8-6.fc37                       @updates               
