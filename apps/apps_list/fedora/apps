@@ -596,6 +596,7 @@ google-noto-sans-sinhala-vf-fonts.noarch             20201206^1.git0c78c8329-7.f
 google-noto-sans-thaana-vf-fonts.noarch              20201206^1.git0c78c8329-7.fc37      @updates                  
 google-noto-sans-vf-fonts.noarch                     20201206^1.git0c78c8329-7.fc37      @updates                  
 google-noto-serif-vf-fonts.noarch                    20201206^1.git0c78c8329-7.fc37      @updates                  
+gparted.x86_64                                       1.5.0-2.fc37                        @updates                  
 gperftools-libs.x86_64                               2.9.1-4.fc37                        @anaconda                 
 gpgme.x86_64                                         1.17.0-4.fc37                       @anaconda                 
 gpgmepp.x86_64                                       1.17.0-4.fc37                       @anaconda                 
