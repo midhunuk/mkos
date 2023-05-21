@@ -49,6 +49,9 @@ app_details:
           - filename: undotree.lua
             config_file_location: ~/.config/nvim/after/plugin
             config_file_repo_location: apps/nvim/configs/after/plugin
+          - filename: dap.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
     - name: dnf
       config_files: 
           - filename: dnf.conf

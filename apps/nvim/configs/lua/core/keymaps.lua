@@ -92,7 +92,7 @@ map("n", "<leader>d", [["_d]])
 map("v", "<leader>d", [["_d]])
 
 -- Tab operation 
-map('n', "<c-t>", ":tabnew<CR>")
+map('n', "<leader>t", ":tabnew<CR>")
 map('n', '<Leader>tq', ':tabclose<CR>')
 
 --map for tabs selection

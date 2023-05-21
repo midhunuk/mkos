@@ -8,6 +8,17 @@ local lsp = require('lsp-zero').preset({
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
+lsp.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
+
+vim.diagnostic.config({
+  virtual_text = true,
+})
+
 lsp.setup()
 
 
