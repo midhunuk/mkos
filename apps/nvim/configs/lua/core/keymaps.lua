@@ -3,11 +3,11 @@
 -----------------------------------------------------------
 
 local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend('force', options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -----------------------------------------------------------
@@ -57,11 +57,12 @@ map('n', '<C-Left>', ':vertical resize -2<CR>')
 map('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- hold on to last copied register
-map('v', 'p','"_dp')
+map('v', 'p', '"_dp')
 map("x", "<leader>p", [["_dP]])
 
 -- map for file explorer
-map('n', '<Leader>e', ':Lexplore<CR>')
+-- Using neovim tree instead
+--map('n', '<Leader>e', ':Lexplore<CR>')
 
 -- map for close and save using leader key
 map('n', '<Leader>w', ':w<CR>')
@@ -78,11 +79,11 @@ map("n", "<C-u>", "<C-u>zz")
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
--- keeps the search lines in the middle 
+-- keeps the search lines in the middle
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
--- copies to the clipboard 
+-- copies to the clipboard
 map("n", "<leader>y", [["+y]])
 map("v", "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
@@ -91,7 +92,7 @@ map("n", "<leader>Y", [["+Y]])
 map("n", "<leader>d", [["_d]])
 map("v", "<leader>d", [["_d]])
 
--- Tab operation 
+-- Tab operation
 map('n', "<leader>t", ":tabnew<CR>")
 map('n', '<Leader>tq', ':tabclose<CR>')
 

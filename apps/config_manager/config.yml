@@ -52,6 +52,18 @@ app_details:
           - filename: dap.lua
             config_file_location: ~/.config/nvim/after/plugin
             config_file_repo_location: apps/nvim/configs/after/plugin
+          - filename: neovim_tree.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
+          - filename: indent_blankline.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
+          - filename: lualine.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
+          - filename: trouble.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
     - name: dnf
       config_files: 
           - filename: dnf.conf
