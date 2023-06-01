@@ -102,9 +102,11 @@ return packer.startup(function(use)
 
 	-- dap
 	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+	use 'theHamsta/nvim-dap-virtual-text'
+	use 'nvim-telescope/telescope-dap.nvim'
 
 	-- rust-tools
-	--use 'simrat39/rust-tools.nvim'
+	use 'simrat39/rust-tools.nvim'
 
 	-- file explorer
 	use { 'nvim-tree/nvim-tree.lua',
