@@ -64,6 +64,9 @@ app_details:
           - filename: trouble.lua
             config_file_location: ~/.config/nvim/after/plugin
             config_file_repo_location: apps/nvim/configs/after/plugin
+          - filename: toggleterm.lua
+            config_file_location: ~/.config/nvim/after/plugin
+            config_file_repo_location: apps/nvim/configs/after/plugin
     - name: dnf
       config_files: 
           - filename: dnf.conf

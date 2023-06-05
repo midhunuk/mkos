@@ -62,10 +62,11 @@ return packer.startup(function(use)
 	}
 
 	-- telescope
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		requires = { { 'nvim-lua/plenary.nvim' } }
-	}
+	use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' }
+
+	-- for async lua function
+	-- required for telescope
+	use 'nvim-lua/plenary.nvim'
 
 	-- treesitter
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -109,11 +110,12 @@ return packer.startup(function(use)
 	use 'simrat39/rust-tools.nvim'
 
 	-- file explorer
-	use { 'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional
-		}
-	}
+	use { 'nvim-tree/nvim-tree.lua' }
+
+	-- devicons
+	-- required for nvim-tree
+	use 'nvim-tree/nvim-web-devicons'
+
 	-- markdown
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -139,6 +141,18 @@ return packer.startup(function(use)
 
 	-- for styling indents
 	use "lukas-reineke/indent-blankline.nvim"
+
+	-- terminal
+	use "akinsho/toggleterm.nvim"
+
+	--start up screen
+	use {
+		'goolord/alpha-nvim',
+		requires = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require 'alpha'.setup(require 'alpha.themes.startify'.config)
+		end
+	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
