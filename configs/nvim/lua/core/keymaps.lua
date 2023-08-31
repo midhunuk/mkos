@@ -40,9 +40,9 @@ map('i', '<left>', '<nop>')
 map('i', '<right>', '<nop>')
 
 -- Map Esc to ff  in insert, visual and visual block mode
-map('i', 'fg', '<Esc>')
-map('v', 'fg', '<Esc>')
-map('x', 'fg', '<Esc>')
+map('i', 'jk', '<Esc>')
+map('v', 'jk', '<Esc>')
+map('x', 'jk', '<Esc>')
 
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -67,6 +67,7 @@ map("x", "<leader>p", [["_dP]])
 -- map for close and save using leader key
 map('n', '<Leader>w', ':w<CR>')
 map('n', '<Leader>q', ':q!<CR>')
+map('n', '<Leader>qa', ':qa!<CR>')
 
 -- joining line using J will put the cursor where it was rather than moving to the end of the line
 map("n", "J", "mzJ`z")
