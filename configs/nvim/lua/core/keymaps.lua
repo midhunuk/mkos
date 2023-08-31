@@ -28,17 +28,6 @@ map('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Disable arrow keys
-map('n', '<up>', '<nop>')
-map('n', '<up>', '<nop>')
-map('n', '<down>', '<nop>')
-map('n', '<left>', '<nop>')
-
-map('i', '<right>', '<nop>')
-map('i', '<down>', '<nop>')
-map('i', '<left>', '<nop>')
-map('i', '<right>', '<nop>')
-
 -- Map Esc to ff  in insert, visual and visual block mode
 map('i', 'jk', '<Esc>')
 map('v', 'jk', '<Esc>')
