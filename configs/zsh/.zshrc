@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # global aliases
 alias -g open="xdg-open"
 alias -g vim="vi"
+alias -g icat="kitty +kitten icat"
 
 #functions
 #For copying current directory
