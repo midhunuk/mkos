@@ -1,0 +1,11 @@
+#!/bin/bash
+git_repo_location="$HOME/git_repo/mkos"
+
+waybar_config_location="$HOME/.config/waybar"
+mkdir -p $waybar_config_location
+
+cd $HOME
+
+waybar_config_repo="$git_repo_location/configs/waybar"
+ln -s "$waybar_config_repo/config" $waybar_config_location
+ln -s "$waybar_config_repo/style.css" $waybar_config_location

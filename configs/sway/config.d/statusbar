@@ -1,19 +1,12 @@
-# Status Bar:
-# Default sway bar for back up
-# comment waybar in the main config to enable this
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-#    colors {
-#        statusline #ffffff
-#        background #000000AA
-#        inactive_workspace #32323200 #32323200 #5c5c5cAA
-#    }
-#}
-
-
+# old default Status Bar replaced with waybar
+# bar {
+#     position top
+#
+#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+#
+#     colors {
+#         statusline #ffffff
+#         background #000000AA
+#         inactive_workspace #32323200 #32323200 #5c5c5cAA
+#     }
+# }
