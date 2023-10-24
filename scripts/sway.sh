@@ -15,7 +15,9 @@ mkdir -p $sway_config_d_location
 sway_config_d_repo="$git_repo_location/configs/sway/config.d"
 ln -s "$sway_config_d_repo/workspaces" $sway_config_d_location
 
-sway_config_d_repo="$git_repo_location/configs/sway/config.d"
 ln -s "$sway_config_d_repo/statusbar" $sway_config_d_location
 
+ln -s "$sway_config_d_repo/outputs" $sway_config_d_location
+
+ln -s "$sway_config_d_repo/inputs" $sway_config_d_location
 
