@@ -1,7 +1,10 @@
 ##########Sway config ##########
 
 ### services
+# notification service
 exec mako
+# Enables inhibit_idle when playing audio
+exec sway-audio-idle-inhibit
 
 ### bar waybar
 bar swaybar_command waybar
