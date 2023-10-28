@@ -28,17 +28,17 @@ include /etc/sway/config-vars.d/*
 
 
 ### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+set $lockscreen /usr/share/wallpapers/SoftWavesLockScreen/contents/images/1920x1080.svg
+exec swayidle -w \
+         timeout 300 'swaylock -f -i $lockscreen' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -i $lockscreen'
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+bindsym $mod+Alt+l exec swaylock -i $lockscreen
 
 ### Key bindings
 #
