@@ -25,7 +25,10 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $fzf_launcher kitty --config \"$HOME/.config/kitty/fzf-launcher.config\" --class fzf-launcher --detach
+set $menu $fzf_launcher sh -c \"dmenu_path | fzf | xargs -r swaymsg exec\"
+for_window [app_id="fzf-launcher"] focus, floating enabled, border pixel 1 
 
 include /etc/sway/config-vars.d/*
 
@@ -80,7 +83,7 @@ bindsym $mod+Alt+l exec swaylock -i $lockscreen
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+	bindsym $mod+Shift+e exec $fzf_launcher ~/.config/sway/sway_exit.sh
 
 #
 # Scratchpad:

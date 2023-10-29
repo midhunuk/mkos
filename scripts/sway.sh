@@ -8,6 +8,7 @@ cd $HOME
 
 sway_config_repo="$git_repo_location/configs/sway"
 ln -s "$sway_config_repo/config" $sway_config_location
+ln -s "$sway_config_repo/sway_exit.sh" $sway_config_location
 
 sway_config_d_location="$HOME/.config/sway/config.d"
 mkdir -p $sway_config_d_location
