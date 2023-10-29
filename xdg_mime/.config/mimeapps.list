@@ -1,0 +1,17 @@
+[Added Associations]
+inode/directory=thunar.desktop
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=firefox-esr.desktop;
+x-scheme-handler/https=firefox-esr.desktop;
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
+application/pdf=okularApplication_pdf.desktop;
+image/svg+xml=firefox-esr.desktop;
+
+[Default Applications]
+inode/directory=thunar.desktop
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=firefox-esr.desktop;
+x-scheme-handler/https=firefox-esr.desktop;
+x-scheme-handler/obsidian=obsidian.desktop
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
+x-scheme-handler/postman=Postman.desktop
