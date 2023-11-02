@@ -98,3 +98,6 @@ map('n', '<Leader>8', '8gt<CR>')
 map('n', '<Leader>9', '9gt<CR>')
 map('n', '<Leader>l', 'gt<CR>')
 map('n', '<Leader>h', 'gT<CR>')
+
+--map for custom help document
+map('n', '<leader>\'', ':tab sview ~/.config/nvim/custom_help.txt<CR>')
