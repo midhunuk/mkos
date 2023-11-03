@@ -3,8 +3,12 @@
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output * bg /usr/share/wallpapers/SpaceFun/contents/images/1920x1080.svg fill
-
+# wallpapers
+#default
+#output * bg ~/Pictures/wallpapers/0071.jpg fill
 
 output eDP-1 resolution 1920x1080 position 1920,0
+
+#wallpapers setings
+exec "bash ~/.config/sway/wallpapers.sh" 
 
