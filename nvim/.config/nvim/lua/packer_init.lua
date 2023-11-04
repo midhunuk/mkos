@@ -62,7 +62,7 @@ return packer.startup(function(use)
 	}
 
 	-- telescope
-	use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' }
+	use { 'nvim-telescope/telescope.nvim' }
 
 	-- for async lua function
 	-- required for telescope
