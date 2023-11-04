@@ -16,3 +16,6 @@ cd ../../stow
 stow neovim
 
 apt-get ripgrep
+
+update-alternatives --install /usr/bin/editor editor /usr/local/bin/nvim 1 && \
+	update-alternatives --set editor /usr/local/bin/nvim
