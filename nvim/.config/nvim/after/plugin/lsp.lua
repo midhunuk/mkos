@@ -23,8 +23,12 @@ lsp.on_attach(function(client, bufnr)
 	lsp.default_keymaps({ buffer = bufnr })
 	vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = true })
 	vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', { buffer = true })
-end)
 
+	local opts = { buffer = bufnr }
+	vim.keymap.set({ 'n', 'x' }, '<leader>f', function()
+		vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+	end, opts)
+end)
 lsp.format_on_save({
 	format_opts = {
 		async = false,
@@ -33,6 +37,7 @@ lsp.format_on_save({
 	servers = {
 		['lua_ls'] = { 'lua' },
 		['rust_analyzer'] = { 'rust' },
+		['volar'] = { 'vue' },
 	}
 })
 
