@@ -29,9 +29,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Map Esc to ff  in insert, visual and visual block mode
-map('i', 'jk', '<Esc>')
-map('v', 'jk', '<Esc>')
-map('x', 'jk', '<Esc>')
+map('i', 'ff', '<Esc>')
+map('v', 'ff', '<Esc>')
+map('x', 'ff', '<Esc>')
 
 -- Better window navigation
 map('n', '<C-h>', '<C-w>h')
