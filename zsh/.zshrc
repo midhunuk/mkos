@@ -103,8 +103,11 @@ source $ZSH/oh-my-zsh.sh
 
 # global aliases
 alias -g open="xdg-open"
-alias -g vim="nvim"
 alias -g icat="kitty +kitten icat"
+
+#neovim aliases
+alias -g vim='nvim' # default
+alias vimr='NVIM_APPNAME=nvim-rust nvim' # Rust IDE
 
 #functions
 #For copying current directory
