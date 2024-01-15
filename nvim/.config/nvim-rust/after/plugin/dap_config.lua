@@ -2,13 +2,13 @@ require("dapui").setup()
 
 local dap, dapui = require("dap"), require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
+	dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
+	dapui.close()
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
+	dapui.close()
 end
 
 vim.keymap.set("n", "<F9>", ':DapToggleBreakpoint<CR>')
@@ -16,3 +16,5 @@ vim.keymap.set("n", "<F5>", ':DapContinue<CR>')
 vim.keymap.set("n", "<F10>", ':DapStepInto<CR>')
 vim.keymap.set("n", "<F11>", ':DapStepOver<CR>')
 vim.keymap.set("n", "<S-F11>", ':DapStepOut<CR>')
+
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})

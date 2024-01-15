@@ -8,9 +8,6 @@ require("nvim-tree").setup({
 	renderer = {
 		group_empty = true,
 	},
-	filters = {
-		dotfiles = true,
-	},
 })
 
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFocus)
