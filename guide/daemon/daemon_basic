@@ -1,0 +1,161 @@
+# Using `systemctl` to Manage Daemons
+
+`systemctl` is a command-line utility used to interact with the `systemd` init system. It allows you to manage services (daemons), check their status, and view logs. Below is a guide on how to use `systemctl` for common tasks.
+
+---
+
+## Starting a Service
+To start a service:
+```bash
+sudo systemctl start <service-name>
+```
+Example:
+```bash
+sudo systemctl start nginx
+```
+
+---
+
+## Stopping a Service
+To stop a service:
+```bash
+sudo systemctl stop <service-name>
+```
+Example:
+```bash
+sudo systemctl stop nginx
+```
+
+---
+
+## Restarting a Service
+To restart a service:
+```bash
+sudo systemctl restart <service-name>
+```
+Example:
+```bash
+sudo systemctl restart nginx
+```
+
+---
+
+## Enabling a Service at Boot
+To enable a service to start automatically at boot:
+```bash
+sudo systemctl enable <service-name>
+```
+Example:
+```bash
+sudo systemctl enable nginx
+```
+
+---
+
+## Disabling a Service at Boot
+To disable a service from starting automatically at boot:
+```bash
+sudo systemctl disable <service-name>
+```
+Example:
+```bash
+sudo systemctl disable nginx
+```
+
+---
+
+## Checking the Status of a Service
+To check the current status of a service:
+```bash
+sudo systemctl status <service-name>
+```
+Example:
+```bash
+sudo systemctl status nginx
+```
+
+---
+
+## Viewing Logs for a Service
+To view logs for a specific service:
+```bash
+sudo journalctl -u <service-name>
+```
+Example:
+```bash
+sudo journalctl -u nginx
+```
+
+---
+
+## Reloading a Service's Configuration
+If you make changes to a service's configuration file, reload it without restarting the service:
+```bash
+sudo systemctl reload <service-name>
+```
+Example:
+```bash
+sudo systemctl reload nginx
+```
+
+---
+
+## Listing All Services
+To list all services and their statuses:
+```bash
+sudo systemctl list-units --type=service
+```
+
+---
+
+## Masking a Service
+To prevent a service from being started (manually or automatically):
+```bash
+sudo systemctl mask <service-name>
+```
+Example:
+```bash
+sudo systemctl mask nginx
+```
+
+---
+
+## Unmasking a Service
+To unmask a service:
+```bash
+sudo systemctl unmask <service-name>
+```
+Example:
+```bash
+sudo systemctl unmask nginx
+```
+
+---
+
+## Checking System Boot Logs
+To view logs from the last boot:
+```bash
+sudo journalctl -b
+```
+
+---
+
+## Summary of Common Commands
+
+| Command                              | Description                              |
+|--------------------------------------|------------------------------------------|
+| `sudo systemctl start <service>`     | Start a service                          |
+| `sudo systemctl stop <service>`      | Stop a service                           |
+| `sudo systemctl restart <service>`   | Restart a service                        |
+| `sudo systemctl enable <service>`    | Enable a service at boot                 |
+| `sudo systemctl disable <service>`   | Disable a service at boot                |
+| `sudo systemctl status <service>`    | Check the status of a service            |
+| `sudo journalctl -u <service>`       | View logs for a service                  |
+| `sudo systemctl reload <service>`    | Reload a service's configuration         |
+| `sudo systemctl mask <service>`      | Mask a service                           |
+| `sudo systemctl unmask <service>`    | Unmask a service                         |
+| `sudo journalctl -b`                 | View logs from the last boot             |
+
+---
+
+This document provides a quick reference for managing daemons using `systemctl`. Always ensure you have the necessary permissions (e.g., `sudo`) to execute these commands.
