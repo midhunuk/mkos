@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "installing apps"
-sudo pacman -S alacritty zsh git neovim stow bat
+sudo pacman -S alacritty zsh git neovim stow bat tree xclip python python-pip git-delta meld
 
 echo "[*] Installing oh-my-zsh"
 sh -c "\$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
