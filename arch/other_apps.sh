@@ -9,3 +9,9 @@ sudo pacman -S bitwarden
 
 echo "installing rclone"
 sudo pacman -S rclone fuse3
+
+sudo pacman -S okular
+
+sudo pacman -S freecad
+
+
