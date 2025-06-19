@@ -23,10 +23,9 @@ end
 
 --Remap space as leader key
 --leader key \ by default
--- yet to be tested
-map('', '<Space>', '<Nop>')
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- map('', '<Space>', '<Nop>')
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- Map Esc to ff  in insert, visual and visual block mode
 map('i', 'ff', '<Esc>')
