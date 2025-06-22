@@ -78,8 +78,9 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# You may need to manually set your language environmentexport
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -103,11 +104,6 @@ source $ZSH/oh-my-zsh.sh
 
 # global aliases
 alias -g open="xdg-open"
-alias -g icat="kitty +kitten icat"
-
-#neovim aliases
-alias -g vim='nvim' # default
-alias vimr='NVIM_APPNAME=nvim-rust nvim' # Rust IDE
 
 #functions
 #For copying current directory
@@ -116,7 +112,6 @@ function cpwd() {
 }
 
 # zsh parameter completion for the dotnet CLI
-
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
