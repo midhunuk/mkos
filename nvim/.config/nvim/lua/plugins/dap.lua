@@ -98,6 +98,31 @@ return {
 				},
 			}
 
+			dap.configurations.c = {
+				{
+					name = "Launch C executable (codelldb)",
+					type = "codelldb",
+					request = "launch",
+					program = function()
+						-- return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+						local cwd = vim.fn.getcwd()
+						local source = cwd .. "/main.c"
+						local binary = cwd .. "a.out"
+						local compile_cmd = "gcc -g " .. source .. " -o " .. binary
+						local compile_result = os.execute(compile_cmd)
+						if compile_result ~= 0 then
+							error("Compile error.")
+						end
+						return binary
+					end,
+					cwd = "${workspaceFolder}",
+					-- stopOnEntry = true,
+					args = {},
+					runInTerminal = false,
+					showDisassembly = "never",
+				},
+			}
+
 			-- Signs & Keybindings
 			vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
 
