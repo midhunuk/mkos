@@ -24,7 +24,9 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 
-exec_always --no-startup-id xidlehook --not-when-audio --timer 300 'betterlockscreen -l' '' --timer 60 'xset dpms force off' 'xset dpms force on'
+exec_always --no-startup-id xidlehook --not-when-audio --timer 300 'betterlockscreen -l' 'xset s off -dpms' --timer 60 'xset dpms force off' 'xset s off -dpms'
+
+exec --no-startup-id xset s off -dpms
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -32,6 +34,7 @@ exec --no-startup-id nm-applet
 
 # run xrandr script for dual monitor
 exec --no-startup-id ~/.config/i3/dual-monitor.sh
+exec --no-startup-id ~/.config/i3/wallpapers.sh
 exec --no-startup-id ~/.config/i3/wallpapers.sh
 
 # Use pactl to adjust volume in PulseAudio.
