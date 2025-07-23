@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Wallpapers
-wallpapers_dir=/mnt/shared/git_repo/wallpapers
+wallpapers_dir=/mnt/workspace/wallpapers-master
 
 #Monitors
 MONITORS=($(xrandr --query | grep " connected" | cut -d" " -f1))
