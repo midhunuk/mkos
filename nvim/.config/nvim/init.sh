@@ -1,3 +1,3 @@
-sudo pacman nvim
+sudo pacman -S nvim
 
-sudo pacman xclip luarocks
+sudo pacman -S xclip luarocks
